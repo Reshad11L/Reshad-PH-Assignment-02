@@ -9,9 +9,167 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         /* shared */
+
         body {
             background-color: #1A0B2E;
             color: white;
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        #mobile-menu {
+            display: none;
+        }
+
+        #menu-toggle:checked~#mobile-menu {
+            display: block;
+        }
+
+        /* buttons */
+
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+
+        .btn-hover:hover {
+            transform: scale(1.05);
+        }
+
+        /* hero bg */
+
+        .podcast-circle {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .hero {
+            background-image: url("./assets/hero-bg.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 11, 46, 0.55);
+            z-index: 0;
+        }
+
+        .hero>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 60px rgba(236, 72, 153, 0.5);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 80px rgba(236, 72, 153, 0.7);
+            }
+        }
+
+        /* Wave Animation */
+
+        .wave-container {
+            position: absolute;
+            left: 48%;
+            top: 60%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            opacity: 0.4;
+        }
+
+        .wave-bar {
+            width: 3px;
+            background: linear-gradient(180deg, #ec4899 0%, #a855f7 100%);
+            border-radius: 10px;
+            animation: wave 1.2s ease-in-out infinite;
+        }
+
+        .wave-bar:nth-child(1) {
+            height: 20px;
+            animation-delay: 0s;
+        }
+
+        .wave-bar:nth-child(2) {
+            height: 35px;
+            animation-delay: 0.1s;
+        }
+
+        .wave-bar:nth-child(3) {
+            height: 50px;
+            animation-delay: 0.2s;
+        }
+
+        .wave-bar:nth-child(4) {
+            height: 60px;
+            animation-delay: 0.3s;
+        }
+
+        .wave-bar:nth-child(5) {
+            height: 70px;
+            animation-delay: 0.4s;
+        }
+
+        .wave-bar:nth-child(6) {
+            height: 80px;
+            animation-delay: 0.5s;
+        }
+
+        .wave-bar:nth-child(7) {
+            height: 70px;
+            animation-delay: 0.6s;
+        }
+
+        .wave-bar:nth-child(8) {
+            height: 60px;
+            animation-delay: 0.7s;
+        }
+
+        .wave-bar:nth-child(9) {
+            height: 50px;
+            animation-delay: 0.8s;
+        }
+
+        .wave-bar:nth-child(10) {
+            height: 35px;
+            animation-delay: 0.9s;
+        }
+
+        .wave-bar:nth-child(11) {
+            height: 20px;
+            animation-delay: 1s;
+        }
+
+        @keyframes wave {
+
+            0%,
+            100% {
+                transform: scaleY(0.5);
+            }
+
+            50% {
+                transform: scaleY(1);
+            }
+        }
+
+        /* Hide wave on mobile */
+        @media (max-width: 768px) {
+            .wave-container {
+                display: none;
+            }
         }
     </style>
 
@@ -19,7 +177,7 @@
 
 <body>
     <!-- navbar -->
-    <header class="w-full">
+    <header class="w-full fixed top-0 z-50 bg-[#1A0B2E]/95 backdrop-blur-sm border-b border-purple-900/20">
         <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
 
             <h1 class="text-2xl font-bold">
@@ -38,12 +196,84 @@
                     class="px-6 py-2 rounded-full text-white font-semibold bg-linear-to-tr from-yellow-400 via-pink-500 to-purple-800 hover:scale-105 transition-transform inline-block">Subscribe
                     <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-            <div class="md:hidden">
+
+            <label for="menu-toggle" class="md:hidden cursor-pointer">
                 <img src="./assets/hamburger-menu.png" class="w-7 h-7" alt="menu">
+            </label>
+            <input type="checkbox" id="menu-toggle">
+        </nav>
+
+        <div id="mobile-menu" class="md:hidden px-4 pb-4">
+            <ul class="flex flex-col gap-3 text-gray-300 font-medium">
+                <li><a href="" class="block py-2 hover:text-white transition">About</a></li>
+                <li><a href="" class="block py-2 hover:text-white transition">Episodes</a></li>
+                <li><a href="" class="block py-2 hover:text-white transition">Host</a></li>
+                <li>
+                    <a href="#subscribe"
+                        class="block text-center px-6 py-2 rounded-full text-white font-semibold bg-linear-to-r from-pink-500 to-purple-600 btn-hover">
+                        Subscribe
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+
+    <!-- hero banner -->
+
+    <section class="hero w-full min-h-svh pt-28 md:pt-32 flex items-center justify-center overflow-hidden">
+
+        <div class="wave-container">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 flex flex-col items-center text-center gap-6">
+            <div class="relative mb-4 md:mb-6">
+                <div class="podcast-circle w-44 h-44 md:w-64 md:h-64 rounded-full flex items-center justify-center">
+                    <img src="./assets/hero-circle.png" alt="" class="w-full h-full object-contain">
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center z-10">
+                    <img src="assets/microphone.png" alt=""
+                        class="w-24 h-24 lg:w-32 lg:h-32 object-contain drop-shadow-lg">
+                </div>
+                <span
+                    class="absolute top-2 right-2 md:top-4 md:right-4 bg-green-500 text-black font-bold text-xs px-3 py-1 rounded-full">
+                    NEW
+                </span>
             </div>
 
-        </nav>
-    </header>
+            <h1 class="text-4xl md:text-6xl font-bold">
+                TechWave
+            </h1>
+
+            <p class="text-gray-300 text-lg md:text-xl max-w-2xl">
+                Your daily dose of tech insights, productivity hacks, and personal growth
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 mt-6">
+                <a href=""
+                    class="bg-linear-to-tr from-yellow-400 via-pink-500 to-purple-800 px-8 py-3 rounded-full btn-hover font-semibold inline-flex items-center justify-center gap-2">
+                    <i class="fab fa-spotify"></i>
+                    Listen On Spotify
+                </a>
+                <a href=""
+                    class="border-2 border-green-500 text-green-500 px-8 py-3 rounded-full btn-hover font-semibold hover:bg-green-500 hover:text-black">
+                    <i class="far fa-envelope"></i>
+                    Subscribe
+                </a>
+            </div>
+        </div>
+    </section>
 
 </body>
 
