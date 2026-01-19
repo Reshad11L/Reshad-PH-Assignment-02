@@ -45,23 +45,16 @@
 
         .hero {
             background-image: url("./assets/hero-bg.png");
-            background-size: contain;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            position: relative;
         }
 
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(26, 11, 46, 0.55);
-            z-index: 0;
-        }
-
-        .hero>* {
-            position: relative;
-            z-index: 1;
+        @media (max-width: 1023px) {
+            .hero {
+                background-size: 95% auto;
+                background-position: center top 80px;
+            }
         }
 
         @keyframes pulse {
@@ -82,8 +75,8 @@
 
         .wave-container {
             position: absolute;
-            left: 48%;
-            top: 60%;
+            left: 38%;
+            top: 58%;
             transform: translateY(-50%);
             display: flex;
             align-items: center;
@@ -187,8 +180,8 @@
 
 <body>
     <!-- navbar -->
-    <header class="w-full fixed top-0 z-50 bg-[#1A0B2E]/95 backdrop-blur-sm border-b border-purple-900/20">
-        <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
+    <header class="py-4 px-6 lg:px-16 bg-[#1A0B2E]/95 backdrop-blur-sm border-b border-purple-900/20">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between">
 
             <h1 class="text-2xl font-bold">
                 Tech<span
@@ -230,7 +223,7 @@
     </header>
 
     <!-- hero banner -->
-    <section class="hero w-full min-h-svh pt-28 md:pt-32 flex items-center justify-center overflow-hidden">
+    <section class="hero py-16 lg:py-24">
 
         <div class="wave-container">
             <div class="wave-bar"></div>
@@ -246,30 +239,35 @@
             <div class="wave-bar"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-6 flex flex-col items-center text-center gap-6">
-            <div class="relative mb-4 md:mb-6">
-                <div class="podcast-circle w-44 h-44 md:w-64 md:h-64 rounded-full flex items-center justify-center">
-                    <img src="./assets/hero-circle.png" alt="" class="w-full h-full object-contain">
-                </div>
-                <div class="absolute inset-0 flex items-center justify-center z-10">
-                    <img src="assets/microphone.png" alt=""
-                        class="w-24 h-24 lg:w-32 lg:h-32 object-contain drop-shadow-lg">
-                </div>
+        <div class="max-w-7xl mx-auto px-6 text-center">
+
+            <div class="relative inline-block mb-8">
+
                 <span
-                    class="absolute top-2 right-2 md:top-4 md:right-4 bg-green-400 text-black font-bold text-xs px-3 py-1 rounded-full">
+                    class="absolute top-0 right-0 bg-green-400 text-black font-bold text-xs px-3 py-1 rounded-full z-20 uppercase tracking-wide">
                     NEW
                 </span>
+
+                <div class="absolute inset-0 flex items-center justify-center z-10">
+                    <img src="assets/microphone.png" alt="mic"
+                        class="w-24 h-24 lg:w-32 lg:h-32 object-contain drop-shadow-lg">
+                </div>
+
+                <div class="podcast-circle w-40 h-40 lg:w-52 lg:h-52 rounded-full  overflow-hidden mx-auto">
+                    <img src="./assets/hero-circle.png" alt="TechWave Pod" class="w-full h-full object-cover opacity-90">
+                </div>
+
             </div>
 
-            <h1 class="text-4xl md:text-6xl font-bold">
+            <h1 class="text-3xl lg:text-5xl font-bold mb-4">
                 TechWave
             </h1>
 
-            <p class="text-gray-300 text-lg md:text-xl max-w-2xl">
+            <p class="text-gray-300 max-w-2xl mx-auto mb-8 text-sm lg:text-base">
                 Your daily dose of tech insights, productivity hacks, and personal growth
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 mt-6">
+            <div class="flex flex-row justify-center gap-4">
                 <a href=""
                     class="bg-linear-to-tr from-yellow-400 via-pink-500 to-purple-800 px-8 py-3 rounded-full btn-hover font-semibold inline-flex items-center justify-center gap-2">
                     <i class="fab fa-spotify"></i>
@@ -392,6 +390,8 @@
         </div>
     </section>
 
+    <!-- Featured Videos -->
+    
 
 </body>
 
