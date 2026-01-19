@@ -165,6 +165,24 @@
             }
         }
 
+        /* Footer bg */
+        .footer-bg {
+            background-image: url('./assets/footer-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        @media (max-width: 576px) {
+            .footer-bg {
+                background-image: url('./assets/footerimg.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+
+
         /* Card hover effect */
         .card-hover {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -539,6 +557,48 @@
             </div>
         </div>
     </section>
+
+    <!-- footer -->
+    <footer class="footer-bg py-12 lg:py-16">
+
+        <div class="max-w-7xl mx-auto px-6 text-center">
+
+            <div class="relative inline-block">
+
+                <a href="" class="text-3xl font-bold inline-block mb-6">
+                    <span class="text-white">Tech</span><span
+                        class="bg-linear-to-tr from-yellow-400 via-pink-500 to-purple-800 bg-clip-text text-transparent">Wave</span>
+                </a>
+
+                <div class="flex flex-wrap gap-4 justify-center mb-8">
+                    <a href="" class="flex items-center gap-2 px-4 py-2 rounded-full hover:bg-white/20 transition">
+                        <img src="./assets/spotify.png" alt="Spotify" class="w-5 h-5">
+                        <span class="text-sm">Spotify</span>
+                    </a>
+                    <a href="" class="flex items-center gap-2 px-4 py-2 rounded-full hover:bg-white/20 transition">
+                        <img src="./assets/apple-podcast.png" alt="Apple Podcasts" class="w-5 h-5">
+                        <span class="text-sm">Apple Podcasts</span>
+                    </a>
+                    <a href="" class="flex items-center gap-2 px-4 py-2 rounded-full hover:bg-white/20 transition">
+                        <img src="./assets/youtube-podcast.png" alt="YouTube" class="w-5 h-5">
+                        <span class="text-sm">YouTube</span>
+                    </a>
+                    <a href="" class="flex items-center gap-2 px-4 py-2 rounded-full hover:bg-white/20 transition">
+                        <img src="./assets/twitter.png" alt="twitter" class="w-5 h-5">
+                        <span class="text-sm">Twitter</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <hr class="border-gray-700 mb-6">
+
+            <p class="text-gray-500 text-sm">
+                &copy; 2026 TechWave Podcast. All rights reserved.
+            </p>
+
+        </div>
+    </footer>
 
 </body>
 
