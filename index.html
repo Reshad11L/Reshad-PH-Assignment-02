@@ -171,6 +171,16 @@
                 display: none;
             }
         }
+
+        /* Card hover effect */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
     </style>
 
 </head>
@@ -309,6 +319,74 @@
                 <div>
                     <div class="text-3xl md:text-4xl font-extrabold text-green-400">50+</div>
                     <div class="text-xs md:text-sm text-gray-300 mt-2 uppercase tracking-widest">Industry Experts</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose -->
+
+    <section class="py-16 lg:py-20 bg-[#230E3D]">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <h2 class="text-2xl lg:text-4xl font-bold text-center mb-12">Why Choose TechWave</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <!-- Cards -->
+                <div class="bg-[#351165] p-8 rounded-2xl card-hover lg:row-span-2 flex flex-col justify-center">
+                    <div class="w-14 h-14 bg-purple-900/50 rounded-xl flex items-center justify-center mb-6">
+                        <img src="./assets/headphone.png" alt="Audio" class="w-7 h-7">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Premium Audio Quality</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Experience crystal-clear sound with professional-grade recording
+                        equipment and expert audio engineering. Every episode is mastered
+                        for optimal listening across all devices and platforms.
+                    </p>
+                </div>
+
+                <div class="bg-[#351165] p-8 rounded-2xl card-hover lg:col-span-2 flex flex-col justify-center">
+                    <div class="w-14 h-14 bg-purple-900/50 rounded-xl flex items-center justify-center mb-6">
+                        <img src="./assets/device.png" alt="Mobile" class="w-7 h-7">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Mobile Friendly</h3>
+                    <p class="text-gray-400">
+                        Listen on the go with seamless mobile experience and offline downloads.
+                    </p>
+                </div>
+
+                <div class="bg-[#351165] p-8 rounded-2xl card-hover lg:col-span-2 flex flex-col justify-center">
+                    <div class="w-14 h-14 bg-purple-900/50 rounded-xl flex items-center justify-center mb-6">
+                        <img src="./assets/location.png" alt="Global" class="w-7 h-7">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Global Community</h3>
+                    <p class="text-gray-400">
+                        Connect with tech enthusiasts from over 120 countries worldwide.
+                    </p>
+                </div>
+
+                <div class="bg-[#351165] p-8 rounded-2xl card-hover lg:col-span-2 flex flex-col justify-center">
+                    <div class="w-14 h-14 bg-purple-900/50 rounded-xl flex items-center justify-center mb-6">
+                        <img src="./assets/new.png" alt="Excl" class="w-7 h-7">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Exclusive Interviews</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Get unprecedented access to industry titans, startup founders, and tech visionaries. Our host
+                        secures exclusive conversations you won't find anywhere else, diving deep into their
+                        journeys, failures, and success strategies.
+                    </p>
+                </div>
+
+                <div class="bg-[#351165] p-8 rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-purple-900/50 rounded-xl flex items-center justify-center mb-6">
+                        <img src="./assets/resource.png" alt="Resources" class="w-7 h-7">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Rich Resources</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Access show notes, transcripts, and additional learning materials for every
+                        episode.
+                    </p>
                 </div>
             </div>
         </div>
